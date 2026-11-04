@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Verifica.ai</title>
+
+    <link rel="stylesheet" href="pagina_inicial.css">
+</head>
+
+<body>
+
+    <main class="pagina">
+
+        
+        <header class="cabecalho">
+
+            <div class="marca">
+                <div class="logo">
+                    <span></span>
+                </div>
+
+                <h1>Verifica.ai</h1>
+            </div>
+
+            <span class="beta">BETA</span>
+
+        </header>
+
+        
+        <section class="apresentacao">
+
+            <h2>Essa imagem é real?</h2>
+
+            <p>
+                Envie uma imagem e descubra a probabilidade
+                de ela ter sido criada por inteligência artificial.
+            </p>
+
+        </section>
+
+        
+        <section class="upload-container" id="area-upload">
+
+            <div class="area-upload">
+
+                <label for="imagem" class="upload-conteudo">
+
+                    <div class="icone-upload">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            width="22" height="22"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <path d="M12 16V4"/>
+                            <path d="m7 9 5-5 5 5"/>
+                            <path d="M5 14v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5"/>
+
+                        </svg>
+
+                    </div>
+
+                    <strong>Arraste sua imagem aqui</strong>
+
+                    <span class="texto-arquivo">
+                        ou <span class="link-arquivo">escolha um arquivo</span>
+                    </span>
+
+                    <span class="formatos">
+                        JPG, PNG OU WEBP - MÁX. 10 MB
+                    </span>
+
+                </label>
+
+                <input
+                    type="file"
+                    id="imagem"
+                    accept="image/jpeg,image/png,image/webp"
+                >
+
+            </div>
+
+        </section>
+
+        
+        <section id="painel-analise" class="painel-analise" hidden>
+
+           
+            <div class="imagem-selecionada">
+
+                <img id="imagem-analise" alt="Imagem selecionada">
+
+                <span id="nome-arquivo" class="nome-arquivo"></span>
+
+            </div>
+
+            
+            <div id="progresso-container" class="progresso-container">
+
+                <div class="animacao-analise">
+                    <div class="quadrado-girando"></div>
+                </div>
+
+                <h3 id="titulo-analise">Analisando imagem</h3>
+
+                <p id="descricao-analise">
+                    Analisando texturas e padrões...
+                </p>
+
+                <div class="barra-container">
+
+                    <div class="barra-fundo">
+                        <div id="barra-progresso" class="barra-progresso"></div>
+                    </div>
+
+                    <span id="porcentagem">0%</span>
+
+                </div>
+
+            </div>
+
+            
+            <div id="resultado-analise" class="resultado-analise" hidden>
+
+                <div class="icone-resultado">✓</div>
+
+                <p class="rotulo-resultado">RESULTADO DA ANÁLISE</p>
+
+                <h3 id="classificacao">Provavelmente autêntica</h3>
+
+                <div class="confianca">
+
+                    <span id="valor-confianca">10%</span>
+
+                    <div class="texto-confianca">
+                        de<br>confiança
+                    </div>
+
+                </div>
+
+                <div class="barra-fundo barra-resultado">
+                    <div id="barra-final" class="barra-progresso"></div>
+                </div>
+
+                
+                <button
+                    id="botao-explicacao"
+                    class="botao-explicacao"
+                    type="button"
+                    aria-expanded="true">
+
+                    <span>Exibir explicação</span>
+                    <span id="seta-explicacao">⌃</span>
+
+                </button>
+
+                
+                <div id="explicacao" class="explicacao">
+
+                    <p id="resumo-resultado">
+                        Foram identificados sinais de uma imagem
+                        provavelmente autêntica:
+                    </p>
+
+                    <ul id="lista-sinais">
+
+                        <li>Variações naturais de textura e granulação.</li>
+
+                        <li>Iluminação e sombras visualmente coerentes.</li>
+
+                        <li>Ausência de artefatos típicos de geração por IA.</li>
+
+                    </ul>
+
+                    <p class="nota-resultado">
+                        A detecção não é absoluta e deve ser usada
+                        apenas como apoio à avaliação.
+                    </p>
+
+                </div>
+
+                
+                <button
+                    id="analisar-novamente"
+                    class="link-nova-analise"
+                    type="button">
+
+                    Analisar outra imagem
+
+                </button>
+
+            </div>
+
+        </section>
+
+        
+        <footer class="aviso">
+
+            <span class="cadeado">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                    width="13" height="13"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.7"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+
+                    <rect x="5" y="10" width="14" height="11" rx="2"/>
+                    <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+
+                </svg>
+            </span>
+
+            <p>
+                Sua imagem não é armazenada. 
+            </p>
+
+        </footer>
+
+    </main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
